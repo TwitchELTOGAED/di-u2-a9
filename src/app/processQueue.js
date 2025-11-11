@@ -1,8 +1,15 @@
 export function getFinalState(baseState, queue) {
-    let finalState = baseState;
-  
-    // TODO: haz algo con la cola...
-  
-    return finalState;
+  let finalState = baseState;
+
+  for (let update of queue) {
+    if (typeof update === 'function') {
+    
+      finalState = update(finalState);
+    } else {
+      
+      finalState = update;
+    }
   }
-  
+
+  return finalState;
+}

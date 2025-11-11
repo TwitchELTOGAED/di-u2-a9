@@ -5,7 +5,7 @@ function increment(n) {
 }
 increment.toString = () => 'n => n+1';
 
-export default function Cola() {
+export default function App() {
   return (
     <>
       <TestCase
@@ -72,3 +72,4 @@ function TestCase({
     </>
   );
 }
+
